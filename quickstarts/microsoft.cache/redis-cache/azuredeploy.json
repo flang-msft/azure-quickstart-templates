@@ -95,6 +95,12 @@
       "apiVersion": "2020-06-01",
       "name": "[parameters('redisCacheName')]",
       "location": "[parameters('location')]",
+			"identity": {
+				"type": "UserAssigned",
+				"userAssignedIdentities": {
+					"/subscriptions/cf8ebc7d-4fa4-411b-b9df-ef775fd2ebd6/resourcegroups/redis/providers/Microsoft.ManagedIdentity/userAssignedIdentities/user-assigned-mi": {}
+				}
+			},
       "properties": {
         "enableNonSslPort": "[parameters('enableNonSslPort')]",
         "minimumTlsVersion": "1.2",
